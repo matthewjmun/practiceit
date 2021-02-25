@@ -1,0 +1,14 @@
+/*
+Given any integer 0 < n ≤ 10000 not divisible by 2 or 5, some multiple of n is a number which in decimal notation is a sequence of 1s. Write a method named ones that accepts an integer n as a parameter and returns how many digits are in the smallest such multiple of n. For example, the call of ones(3) returns 3 because the smallest multiple of 3 that consists entirely of 1s is 111, which is 3 digits long. Similarly, the call of ones(7) returns 6 because the smallest such multiple of 7 is 111111. You may assume that the integer n passed is not divisible by 2 or 5 and is in the proper specified range.
+*/
+
+public int ones(int n) {
+   BigInteger bn = BigInteger.valueOf(n);
+   BigInteger ones = BigInteger.ONE;
+   String onesStr = "1";
+   while (!ones.mod(bn).equals(BigInteger.ZERO)) {
+      onesStr += "1";
+      ones = new BigInteger(onesStr);
+   }
+   return onesStr.length();
+}
