@@ -1,0 +1,14 @@
+/*
+Write a method named rotateRight that accepts an array of integers as a parameter and rotates the values in the array to the right (i.e., forward in position) by one. Each element moves right by one, except the last element, which moves to the front. For example, if a variable named list refers to an array containing the values {3, 8, 19, 7}, the call of rotateRight(list) should modify it to store {7, 3, 8, 19}. A subsequent call of rotateRight(list) would leave the array as follows: {19, 7, 3, 8}
+*/
+
+public static int[] rotateRight(int[]list){
+    int last = list[list.length-1];
+    
+    for (int i = list.length-1; i > 0; i--)
+        list[i] = list[i-1];
+    
+    list[0] = last;
+    
+    return list;
+}
