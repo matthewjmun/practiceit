@@ -1,0 +1,10 @@
+/*
+Write a method stutter that takes an ArrayList of Strings as a parameter and that replaces every string with two of that string. For example, if the list stores the values {"how", "are", "you?"} before the method is called, it should store the values {"how", "how", "are", "are", "you?", "you?"} after the method finishes executing.
+*/
+
+public static void stutter(ArrayList<String> list) {
+    for (int i = 0; i < list.size(); i++) {
+        list.add(i, list.get(i));
+        i++;
+    }
+}
