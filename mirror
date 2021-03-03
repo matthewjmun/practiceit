@@ -27,8 +27,7 @@ public class ArrayIntList {
 
 public void mirror() {
     ensureCapacity(size * 2);
-    int initial = size;
-    for (int i = 0; i < initial; i++) {
-        add(elementData[initial-1 - i]);
+    for (int i = size - 1; i >= 0; i--) {
+        add(elementData[i]);
     }
 }
